@@ -5,7 +5,7 @@ geoJson2heat = function(geojson, intensity) {
 		};
 
 	L.mapbox.accessToken = 'pk.eyJ1Ijoiemh1Y2tvZmYiLCJhIjoiNlE1elpIZyJ9.YVbO-NCwjWIEkAd-TB42Cw';
-	var map = L.mapbox.map('map', null, {maxZoom: 18}).setView([55.753065,37.619191], 10);
+	var map = L.mapbox.map('map', null, {maxZoom: 18}).setView([55.753065,37.619191], 12);
 
 	L.control.geocoder('search-vZnXM9p').addTo(map);
 
@@ -16,7 +16,7 @@ geoJson2heat = function(geojson, intensity) {
 	var basemaps = {
 		"Mapbox high-contrast": mapbox_hc,
 		"Mapbox streets": mapbox_st,
-		"Спутниковое изображения": mapbox_sat
+		"Mapbox satellite": mapbox_sat
 		};
 
 	var cameras = L.mapbox.featureLayer().loadURL('http://api.data.mos.ru/v1/datasets/1498/features?bbox='+map.getBounds().toBBoxString());
@@ -77,7 +77,7 @@ cameras.on('click', function(e) {
         map.panTo(e.layer.getLatLng())
 	});
 
-var buffers = L.mapbox.cameras().addTo(map);	
+var buffers = L.mapbox.featureLayer().addTo(map);	
 cameras.on('mouseover', function(e) {
 	var buffer = turf.buffer(e.layer.feature, 0.05, 'kilometers');
 	buffers.setGeoJSON(buffer).addTo(map);
