@@ -21,7 +21,7 @@ geoJson2heat = function(geojson, intensity) {
 
 	var cameras = L.mapbox.featureLayer().loadURL('http://api.data.mos.ru/v1/datasets/1498/features?bbox='+map.getBounds().toBBoxString());
 
-	mapbox_st.addTo(map);
+	mapbox_hc.addTo(map);
 
 	cameras.on('ready', function(e) {
 		var heat = L.heatLayer(cameras.getGeoJSON(), {maxZoom: 18}).addTo(map);
