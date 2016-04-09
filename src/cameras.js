@@ -66,7 +66,7 @@ geoJson2heat = function(geojson, intensity) {
 
         marker.setIcon(L.icon({
             "iconUrl": "http://api.data.mos.ru/v1/datasets/1498/marker",
-            "iconSize": [24, 29],
+            //"iconSize": [24, 29],
             "iconAnchor": [12, 29],
             "popupAnchor": [0, 0],
             "className": "dot"
