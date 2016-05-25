@@ -19,7 +19,7 @@ geoJson2heat = function(geojson, intensity) {
 		"Mapbox satellite": mapbox_sat
 		};
 
-	var cameras = L.mapbox.featureLayer().loadURL('http://api.data.mos.ru/v1/datasets/1498/features?bbox='+map.getBounds().toBBoxString());
+	var cameras = L.mapbox.featureLayer().loadURL('http://api.data.mos.ru/v1/datasets/1498/features');
 
 	mapbox_hc.addTo(map);
 
