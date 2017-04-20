@@ -19,7 +19,7 @@ geoJson2heat = function(geojson, intensity) {
 		"Mapbox satellite": mapbox_sat
 		};
 
-	var cameras = L.mapbox.featureLayer().loadURL('https://api.data.mos.ru/v1/datasets/1498/features');
+	var cameras = L.mapbox.featureLayer().loadURL('https://apidata.mos.ru/v1/datasets/1498/features');
 
 	mapbox_hc.addTo(map);
 
@@ -65,7 +65,7 @@ geoJson2heat = function(geojson, intensity) {
 		feature = marker.feature;
 
         marker.setIcon(L.icon({
-            "iconUrl": "https://api.data.mos.ru/v1/datasets/1498/marker",
+            "iconUrl": "https://apidata.mos.ru/v1/datasets/1498/marker",
             //"iconSize": [24, 29],
             "iconAnchor": [12, 29],
             "popupAnchor": [0, 0],
